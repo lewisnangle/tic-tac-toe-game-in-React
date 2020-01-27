@@ -1,6 +1,7 @@
 import React from 'react';
 import './Square.js'
 import Square from './Square.js';
+import './App.css';
 
 class Board extends React.Component {
     constructor(props){
@@ -28,9 +29,10 @@ class Board extends React.Component {
     }
 
     render(){
-        const status = 'Next player = x';
+        const status = 'Next player: ' + (this.state.xIsNext ? "X" : "O");
         return(
             <div>
+               <div className="status">{status}</div>
                 <div className='board-row'>
                     {this.renderSquare(0)}{this.renderSquare(1)}{this.renderSquare(2)}
                 </div>
